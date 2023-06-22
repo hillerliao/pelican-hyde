@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Feed aggregation{% endblock %}
+
+{% block content %}
+<section id="content" class="body">
+    <h1 class="entry-title">碎片化分享</h1>
+
+    {% if WEBRING_FEED_URLS %}
+        {% for article in webring_articles %}
+            <article class="hentry">
+                <header>
+                    <!-- <h2><a href="{{ article.link }}">{{ article.title }}</a></h2> -->
+                    <!-- <h2><a href="{{ article.link }}">{{ article.date|strftime('%d %B %Y') }}</a></h2> -->
+                    <h2>{{ article.date|strftime('%d %B %Y') }}</h2>    
+                </header>
+                <!-- <p>{{ article.date|strftime('%d %B %Y') }}</p> -->
+                <div class="entry-content">
+                {{ article.summary}}
+                </div>
+            </article>
+        {% endfor %}
+    {% endif %}
+
+    <div style="margin-top: 20px"><a href="https://t.me/JapanCoder/">更多</a></div>
+
+</section>
+{% endblock %}
