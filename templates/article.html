@@ -8,6 +8,8 @@
 	<meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
 {% endblock %}
 
+<title>{% block title %}{{ article.title }}{% endblock title %}</title>
+
 {% block content %}
 <div class="post">
 	<h1 class="post-title">{{ article.title }}</h1>
